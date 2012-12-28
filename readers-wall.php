@@ -1,9 +1,9 @@
 <?php
 /*
-	Plugin Name:Readers Wall
+	Plugin Name:Readers Wall (读者墙)
 	Plugin URI: http://blog.leniy.info/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 0.0.1
+	Version: 0.0.2
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -108,20 +108,23 @@ function qw_RW_setdefault() {
 	$default_shortcode = "readerswall";
 	update_option("qw_RW_css", $default_css);//保存css样式
 	update_option("qw_RW_shortcode", $default_shortcode);//保存文章调用时的短代码
-	update_option("qw_RW_shownumber", "10");//展示评论数排名前多少的用户
+	update_option("qw_RW_shownumber", "64");//展示评论数排名前多少的用户
+	update_option("qw_RW_days", "180");//统计多少天内的评论
 }
 
 function qw_RW_act() {
 	add_option("qw_RW_css", $default_css);//保存css样式
 	add_option("qw_RW_shortcode", $default_shortcode);//保存文章调用时的短代码
 	add_option("qw_RW_shownumber", "10");//展示评论数排名前多少的用户
+	add_option("qw_RW_days", "180");//统计多少天内的评论
 	qw_RW_setdefault();
 }
 
 function qw_MTA_deact() {
 	delete_option("qw_RW_css");
 	delete_option("qw_RW_shortcode");
-	delete_option("qw_MTA_notsentpost");
+	delete_option("qw_RW_shownumber");
+	delete_option("qw_RW_days");
 }
 
 if (is_admin()) {
@@ -129,7 +132,7 @@ if (is_admin()) {
 }
 
 function qw_RW_menu() {
-	add_options_page( "Reaser's Wall", "Reaser's Wall", "administrator", 'RW.php', 'qw_RW_setpage');
+	add_options_page( "Reasers Wall读者墙", "Reasers Wall读者墙", "administrator", 'RW.php', 'qw_RW_setpage');
 }
 
 /**********************************************************************/
@@ -141,6 +144,7 @@ function qw_RW_setpage() {
 		update_option("qw_RW_css", $_POST['qw_RW_css']);
 		update_option("qw_RW_shortcode", $_POST['qw_RW_shortcode']);
 		update_option("qw_RW_shownumber", $_POST['qw_RW_shownumber']);
+		update_option("qw_RW_days", $_POST['qw_RW_days']);
 		echo "<div id=\"message\" class=\"rwupdate\"><p>更新保存成功，请在文章中插入[" . get_option("qw_RW_shortcode") . "]启用读者墙</p></div>";
 	}
 	if($_POST['qw_RW_resetbtn']=="恢复默认设置") {
@@ -182,6 +186,13 @@ function qw_RW_setpage() {
 					</td>
 				</tr>
 				<tr>
+					<th scope="row">依照多少天内的评论进行排名</th>
+					<td>
+						<input class="regular-text" name="qw_RW_days" type="text" id="qw_RW_days" value="<?php echo get_option("qw_RW_days"); ?>" />天
+						<p>如果需要展示全部日期评论的排名，只需填入足够大的数字即可，例如99999</p>
+					</td>
+				</tr>
+				<tr>
 					<th scope="row">css样式</th>
 					<td>
 						<textarea name="qw_RW_css" rows="5" cols="50" id="qw_RW_css" class="large-text code"><?php echo get_option('qw_RW_css'); ?></textarea>
@@ -205,6 +216,7 @@ add_shortcode(get_option("qw_RW_shortcode"), "qw_RW_page");
 function qw_RW_page() {
 	global $wpdb;
 	$qw_RW_shownumber = get_option('qw_RW_shownumber');
+	$qw_RW_days = get_option('qw_RW_days');
 	$query = "
 	SELECT
 		COUNT( comment_author_email ) AS number,
@@ -216,7 +228,10 @@ function qw_RW_page() {
 		FROM $wpdb->comments
 		LEFT OUTER JOIN $wpdb->posts
 		ON ( $wpdb->posts.ID = $wpdb->comments.comment_post_ID )
-		WHERE user_id = '0' AND comment_approved =  '1'
+		WHERE
+				comment_date > date_sub( NOW(), INTERVAL $qw_RW_days DAY )
+			AND user_id = '0'
+			AND comment_approved =  '1'
 	) AS tempcmt
 	GROUP BY comment_author_email
 	ORDER BY number DESC

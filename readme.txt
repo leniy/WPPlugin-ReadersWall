@@ -1,6 +1,6 @@
-﻿=== Readers Wall ===
+﻿=== Readers Wall (读者墙) ===
 Contributors: leniy
-Tags: comments,post,page,link,wall
+Tags: comments,post,page,link,wall,读者墙,
 Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: trunk
@@ -16,9 +16,7 @@ css样式、短代码、展示数量完全可以自行定义
 
 同时插件提供默认的动态css设置，可以避免对css不熟悉用户的麻烦。
 
-简单易用
-
-demo page:http://blog.leniy.info/liuyan
+简单易用：[DEMO PAGE](http://blog.leniy.info/liuyan "示例页面")
 
 == Installation ==
 
@@ -29,12 +27,16 @@ demo page:http://blog.leniy.info/liuyan
 
 == Screenshots ==
 
-1. readerswall-1.jpg
+1. screenshot-1.jpg
 
 == Changelog ==
 
-= 0.0.1 =
+= 0.0.2 =
+* 2012.12.28
+* 增加时间区间选择，允许自定义统计多少天内的评论
+* 修复卸载插件时qw_RW_shownumber选项没有删除的错误
 
+= 0.0.1 =
 * 2012.12.26
 * First version released.
 
