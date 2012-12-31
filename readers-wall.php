@@ -1,9 +1,9 @@
 <?php
 /*
-	Plugin Name:Readers Wall (读者墙)
+	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.info/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 0.0.2
+	Version: 0.0.3
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -204,7 +204,8 @@ function qw_RW_setpage() {
 		<input type="submit" name="qw_RW_btn" value="更新" class="button-primary" />
 		<input type="submit" name="qw_RW_resetbtn" value="恢复默认设置" class="button-primary" />
 	</form></div>
-
+	<hr>
+	<iframe frameborder="0" src="http://blog.leniy.info/readers-wall.html" scrolling="auto" noresize="" width="100%" height="500px"></iframe>
 	<?php
 }
 

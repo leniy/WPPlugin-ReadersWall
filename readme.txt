@@ -1,5 +1,6 @@
-﻿=== Readers Wall (读者墙) ===
+﻿=== Readers Wall ===
 Contributors: leniy
+Donate link: http://blog.leniy.info/
 Tags: comments,post,page,link,wall,读者墙,
 Requires at least: 3.0
 Tested up to: 3.5
@@ -30,6 +31,10 @@ css样式、短代码、展示数量完全可以自行定义
 1. screenshot-1.jpg
 
 == Changelog ==
+
+= 0.0.3 =
+* 2012.12.31
+* 增加css文件夹，作为默认样式表文件存储的位置
 
 = 0.0.2 =
 * 2012.12.28
