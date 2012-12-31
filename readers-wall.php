@@ -3,7 +3,7 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.info/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 0.0.3
+	Version: 0.1
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -120,7 +120,7 @@ function qw_RW_act() {
 	qw_RW_setdefault();
 }
 
-function qw_MTA_deact() {
+function qw_RW_deact() {
 	delete_option("qw_RW_css");
 	delete_option("qw_RW_shortcode");
 	delete_option("qw_RW_shownumber");
