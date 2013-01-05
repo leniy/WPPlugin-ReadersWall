@@ -1,0 +1,83 @@
+.readers-wall {
+	line-height:18px;
+	text-align:left;
+	overflow:hidden;
+	_zoom:1;
+	font-size:15px;
+}
+.readers-wall li{
+	width:195px;
+	float:left;
+	*margin-right:-1px
+}
+.readers-wall a,.readers-wall a:hover strong{
+	background-color:#f0f0f0;
+	background-image:background-image:-moz-linear-gradient(#f8f8f8,#f0f0f0);
+	-webkit-linear-gradient(#f8f8f8,#f0f0f0);
+	background-image:linear-gradient(#f8f8f8,#f0f0f0)
+}
+.readers-wall a{
+	position:relative;
+	display:block;
+	height:36px;
+	margin:4px;
+	padding:4px 4px 4px 44px;
+	color:#999;
+	overflow:hidden;
+	border:#D1D1D1 1px solid;
+	border-radius:2px;
+	box-shadow:#eee 0 0 2px;
+	text-decoration:none
+}
+.readers-wall img,.readers-wall em,.readers-wall strong{
+	-moz-transition:all .2s ease-out;
+	-webkit-transition:all .2s ease-out;
+	transition:all .2s ease-out
+}
+.readers-wall img{
+	width:36px;
+	height:36px;
+	float:left;
+	margin:0 8px 0 -40px;
+	border-radius:2px
+}
+.readers-wall em{
+	color:#666;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	overflow:hidden;
+	margin-right:10px
+}
+.readers-wall strong{
+	color:#ddd;
+	width:40px;
+	text-align:right;
+	position:absolute;
+	right:6px;
+	top:4px;
+	font:bold 14px/16px microsoft yahei
+}
+.readers-wall a:hover{
+	border-color:#bbb;
+	box-shadow:#ccc 0 0 2px;
+	background-color:#fff;
+	background-image:none
+}
+.readers-wall a:hover img{
+	opacity:.6;
+	margin-left:0
+}
+.readers-wall a:hover em{
+	color:#EE8B17;
+	font:bold 12px/36px microsoft yahei
+}
+.readers-wall a:hover strong{
+	color:#EE8B17;
+	right:145px;
+	top:0;
+	text-align:center;
+	border-right:#D1D1D1 1px solid;
+	height:44px;
+	line-height:40px
+}
