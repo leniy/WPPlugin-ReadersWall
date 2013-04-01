@@ -3,7 +3,7 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.info/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.1.7
+	Version: 1.1.8
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -28,7 +28,7 @@
 $thisplugin_author = "Leniy";
 $thisplugin_url = "http://blog.leniy.info/readers-wall.html";
 $thisplugin_name = "Readers Wall";
-$thisplugin_version = "1.1.6";
+$thisplugin_version = "1.1.8";
 
 register_activation_hook(__FILE__, 'qw_RW_act');
 register_deactivation_hook(__FILE__, 'qw_RW_deact');
