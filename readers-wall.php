@@ -1,15 +1,15 @@
 <?php
 /*
 	Plugin Name:Readers Wall
-	Plugin URI: http://blog.leniy.info/readers-wall.html
+	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.1.8
+	Version: 1.1.9
 	Author: leniy
-	Author URI: http://blog.leniy.info/
+	Author URI: http://blog.leniy.org/
 */
 
 /*
-	Copyright 2012 Leniy (m@leniy.info)
+	Copyright 2012 Leniy (m@leniy.org)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 
@@ -26,7 +26,7 @@
 */
 
 $thisplugin_author = "Leniy";
-$thisplugin_url = "http://blog.leniy.info/readers-wall.html";
+$thisplugin_url = "http://blog.leniy.org/readers-wall.html";
 $thisplugin_name = "Readers Wall";
 $thisplugin_version = "1.1.8";
 
@@ -180,7 +180,7 @@ function qw_RW_setpage() {
 						</script>
 
 	<div style="display:none;"><hr>
-	<iframe frameborder="0" src="http://blog.leniy.info/readers-wall.html" scrolling="auto" noresize="" width="100%" height="500px"></iframe></div>
+	<iframe frameborder="0" src="http://blog.leniy.org/readers-wall.html" scrolling="auto" noresize="" width="100%" height="500px"></iframe></div>
 	<?php
 }
 
@@ -222,7 +222,7 @@ function qw_RW_page() {
 			$temp_number = $RW->number;
 			$temp_email = $RW->comment_author_email;
 			$temp_author = $RW->comment_author;
-			$temp_url = $RW->comment_author_url ? $RW->comment_author_url : "http://blog.leniy.info";
+			$temp_url = $RW->comment_author_url ? $RW->comment_author_url : "http://blog.leniy.org";
 			$temp_avatar = get_avatar($RW, 50, plugins_url('readers-wall/resource/default.png'));
 			$nofollow = "";
 

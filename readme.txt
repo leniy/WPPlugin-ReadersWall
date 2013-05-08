@@ -3,7 +3,7 @@ Contributors: leniy
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HAENMLDR2UMFJ&lc=US&item_name=Leniy%20Plugins%20Donation&item_number=plugin%2ddonate&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: comments,post,page,link,wall,读者墙,
 Requires at least: 3.0
-Tested up to: 3.5
+Tested up to: 3.6
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -17,7 +17,7 @@ css样式、短代码、展示数量完全可以自行定义
 
 同时插件提供默认的动态css设置，可以避免对css不熟悉用户的麻烦。
 
-简单易用： [DEMO PAGE](http://blog.leniy.info/liuyan "示例页面")
+简单易用： [DEMO PAGE](http://blog.leniy.org/liuyan "示例页面")
 
 == Installation ==
 
@@ -32,7 +32,7 @@ css样式、短代码、展示数量完全可以自行定义
 
 == Changelog ==
 
-[View changelog here.](http://blog.leniy.info/readers-wall.html)
+[View changelog here.](http://blog.leniy.org/readers-wall.html)
 
 == Frequently Asked Questions ==
 
