@@ -3,7 +3,7 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.2.1
+	Version: 1.2.5
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 */
@@ -28,7 +28,7 @@
 $thisplugin_author = "Leniy";
 $thisplugin_url = "http://blog.leniy.org/readers-wall.html";
 $thisplugin_name = "Readers Wall";
-$thisplugin_version = "1.1.8";
+$thisplugin_version = "1.2.5";
 
 register_activation_hook(__FILE__, 'qw_RW_act');
 register_deactivation_hook(__FILE__, 'qw_RW_deact');
@@ -223,17 +223,23 @@ function qw_RW_page() {
 			$temp_email = $RW->comment_author_email;
 			$temp_author = $RW->comment_author;
 			$temp_url = $RW->comment_author_url ? $RW->comment_author_url : "http://blog.leniy.org";
-			$temp_avatar = get_avatar($RW, 50, plugins_url('readers-wall/resource/default.png'));
+			if (function_exists('leniy_local_avatar')) {
+				$temp_avatar = leniy_local_avatar($RW->comment_author_email,'50',plugins_url('readers-wall/resource/default.png'));
+			}
+			else {
+				$temp_avatar = get_avatar($RW, 50, plugins_url('readers-wall/resource/default.png'));
+			}
+			//$nofollow = " rel=\"nofollow\"";
 			$nofollow = "";
 
 			if ($qw_RW_css == "animated_with_css3.css") {
-				$output .= "<a title=\"" . $temp_author . "  (" . $temp_number . "条评论)\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\" rel=\"" . $nofollow . "\">" . "<span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
+				$output .= "<a title=\"" . $temp_author . "  (" . $temp_number . "条评论)\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\"" . $nofollow . "><span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
 			}
 			if ($qw_RW_css == "animated_shift.css") {
-				$output .= "<li><a target=\"_blank\" href=\"" . $temp_url . "\" rel=\"" . $nofollow . "\">" . $temp_avatar . "<em>" . $temp_author . "</em> <strong>" . $temp_number . "</strong></br></a></li>";
+				$output .= "<li><a target=\"_blank\" href=\"" . $temp_url . "\"" . $nofollow . ">" . $temp_avatar . "<em>" . $temp_author . "</em> <strong>" . $temp_number . "</strong></br></a></li>";
 			}
 			if ($qw_RW_css == "manualcss") {
-				$output .= "<a title=\"" . $temp_author . "  (" . $temp_number . "条评论)\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\" rel=\"" . $nofollow . "\">" . "<span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
+				$output .= "<a title=\"" . $temp_author . "  (" . $temp_number . "条评论)\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\"" . $nofollow . "><span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
 			}
 
 		}
