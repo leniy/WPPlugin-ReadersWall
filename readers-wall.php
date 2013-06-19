@@ -3,7 +3,7 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.2.5
+	Version: 1.2.6
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 */
@@ -223,12 +223,7 @@ function qw_RW_page() {
 			$temp_email = $RW->comment_author_email;
 			$temp_author = $RW->comment_author;
 			$temp_url = $RW->comment_author_url ? $RW->comment_author_url : "http://blog.leniy.org";
-			if (function_exists('leniy_local_avatar')) {
-				$temp_avatar = leniy_local_avatar($RW->comment_author_email,'50',plugins_url('readers-wall/resource/default.png'));
-			}
-			else {
-				$temp_avatar = get_avatar($RW, 50, plugins_url('readers-wall/resource/default.png'));
-			}
+			$temp_avatar = get_avatar($RW, 50, plugins_url('readers-wall/resource/default.png'));
 			//$nofollow = " rel=\"nofollow\"";
 			$nofollow = "";
 
