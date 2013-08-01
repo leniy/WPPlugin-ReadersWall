@@ -3,13 +3,13 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.2.6
+	Version: 1.2.7
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 */
 
 /*
-	Copyright 2012 Leniy (m@leniy.org)
+	Copyright 2012-2013 Leniy (m@leniy.org)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 
@@ -28,7 +28,7 @@
 $thisplugin_author = "Leniy";
 $thisplugin_url = "http://blog.leniy.org/readers-wall.html";
 $thisplugin_name = "Readers Wall";
-$thisplugin_version = "1.2.5";
+$thisplugin_version = "1.2.7";
 
 register_activation_hook(__FILE__, 'qw_RW_act');
 register_deactivation_hook(__FILE__, 'qw_RW_deact');
