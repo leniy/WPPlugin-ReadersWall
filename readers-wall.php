@@ -3,7 +3,7 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.2.7
+	Version: 1.2.8
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 */
@@ -228,7 +228,7 @@ function qw_RW_page() {
 			$nofollow = "";
 
 			if ($qw_RW_css == "animated_with_css3.css") {
-				$output .= "<a title=\"" . $temp_author . "  (" . $temp_number . "条评论)\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\"" . $nofollow . "><span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
+				$output .= "<a title=\"" . $temp_author . "\" href=\"" . $temp_url . "\" target=\"_blank\" class=\"RW-btn\"" . $nofollow . "><span class=\"RW-btn-slide-text\">" . $temp_number . "</span>" . $temp_avatar . "</a>";
 			}
 			if ($qw_RW_css == "animated_shift.css") {
 				$output .= "<li><a target=\"_blank\" href=\"" . $temp_url . "\"" . $nofollow . ">" . $temp_avatar . "<em>" . $temp_author . "</em> <strong>" . $temp_number . "</strong></br></a></li>";
