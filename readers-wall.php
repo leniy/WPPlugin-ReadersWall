@@ -3,27 +3,12 @@
 	Plugin Name:Readers Wall
 	Plugin URI: http://blog.leniy.org/readers-wall.html
 	Description: 高度自定制性能的读者墙
-	Version: 1.2.8
+	Version: 1.3.0
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 */
 
-/*
-	Copyright 2012-2013 Leniy (m@leniy.org)
-
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 2, as 
-	published by the Free Software Foundation.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+require_once(plugin_dir_path( __FILE__ ).'/inc/leniy_admin_menu.php');
 
 $thisplugin_author = "Leniy";
 $thisplugin_url = "http://blog.leniy.org/readers-wall.html";
@@ -67,7 +52,7 @@ if (is_admin()) {
 }
 
 function qw_RW_menu() {
-	add_options_page( "Reasers Wall读者墙", "Reasers Wall读者墙", "administrator", 'RW.php', 'qw_RW_setpage');
+	add_submenu_page('leniy-plugins', "Reasers Wall读者墙", "Reasers Wall读者墙", "manage_options", 'leniy-plugins/RW.php', 'qw_RW_setpage');
 }
 
 /**********************************************************************/
