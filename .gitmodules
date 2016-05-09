@@ -1,0 +1,3 @@
+[submodule "readers-wall/inc"]
+	path = readers-wall/inc
+	url = git@github.com:leniy/WPPlugin-LeniyInc.git
